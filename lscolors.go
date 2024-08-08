@@ -417,10 +417,6 @@ func ParseLSColors(clrs string) (*LSColors, error) {
 	// Sorting by only length (which is all we really need) is
 	// 3x faster but the order is non-deterministic which
 	// makes comparing LSColors by the String method impossible.
-	// slices.SortFunc(ls.Exts, func(e1, e2 ColorExtension) int {
-	// 	return len(e1.Ext) - len(e2.Ext)
-	// 	// return strings.Compare(e1.Ext, e2.Ext)
-	// })
 	sort.Slice(ls.Exts, func(i, j int) bool {
 		e1 := ls.Exts[i].Ext
 		e2 := ls.Exts[j].Ext
